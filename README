@@ -1,0 +1,30 @@
+sphinxsearchdocker
+
+This is module allow running sphinxsearch daemon in docker containers via puppet.
+
+Usage:
+
+for first add sphinx config:
+
+file { '/etc/docker-sphinx/coolsite-sphinx.conf':
+  ensure => 'file',
+  source  => "puppet:///modules/some-server-conf/coolsite.conf"
+}
+
+then, add resource:
+
+sphinxsearchdocker::sphinxsearch { 'coolsite':
+  sphinx_container_name => 'coolsite',
+  sphinx_container_port => '3312',
+  require               => File['/etc/docker-sphinx/coolsite-sphinx.conf']
+}
+
+License
+-------
+
+
+Contact
+-------
+mailto:jeka@stfalcon.com
+
+Please log tickets and issues at our [Projects site](https://github.com/stfalcon-studio/sphinxsearch-docker/issues)

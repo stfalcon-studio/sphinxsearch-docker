@@ -1,0 +1,11 @@
+[program:docker-sphinx-<%= sphinx_container_name %>]
+command=/usr/local/bin/docker run --name sphinx-<%= sphinx_container_name %> -p 127.0.0.1:<%= sphinx_container_port %>:3312 -v /etc/docker-sphinx/<%= sphinx_container_name %>-sphinx.conf:/etc/sphinxsearch/sphinx.conf jekakm/sphinx /usr/local/bin/run.sh
+user=root
+process_name=%(process_num)s
+stdout_logfile=/var/log/docker-sphinx/<%= sphinx_container_name %>_stdout.log
+stderr_logfile=/var/log/docker-sphinx/<%= sphinx_container_name %>_stderr.log
+redirect_stderr=false
+autostart=true
+autorestart=true
+startsecs=5
+numprocs=1

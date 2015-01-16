@@ -1,0 +1,21 @@
+{
+  "name": "stfalcon-sphinxsearchdocker",
+  "version": "0.0.7",
+  "author": "Evgeniy Gurinovich",
+  "license": "Apache-2.0",
+  "summary": "A module for running sphinx in docker containers",
+  "source": "https://github.com/stfalcon-studio/sphinxsearch-docker",
+  "project_page": "https://forge.puppetlabs.com/stfalcon/sphinxsearch-docker",
+  "issues_url": "https://github.com/stfalcon-studio/sphinxsearch-docker/issues",
+  "tags": ["docker", "sphinx"],
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"Debian",
+    "operatingsystemrelease":[ "7", "8" ]
+    }
+   ],
+  "dependencies": [
+    { "name": "puppetlabs-stdlib", "version_requirement": ">=4.5.1" },
+    { "name": "garethr/docker", "version_requirement": ">=3.3.1" }
+  ]
+}
